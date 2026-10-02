@@ -10,7 +10,7 @@ Combustion is modelled as chemical equilibrium with [Cantera](https://cantera.or
 | --- | --- | --- |
 | `ethanol_lox_ideal_cstar.py` | Script | Finds the equivalence ratio that maximises C* at a given chamber pressure |
 | `ethanol_lox_engine_spec.py` | Script | Sizes the engine and draws the bell-nozzle contour |
-| `Lstar_ChamberVolume.py` | Function library | Injector sizing, droplet size, and L* |
+| `Lstar_ChamberVolume.py` | Function library (in progress) | Chamber volume and injector orifice sizing |
 | `Combustion.yaml` | Data | Cantera gas model used by all of the scripts |
 | `Nozzle_Geometry.png` | Output | Example nozzle contour plot from `ethanol_lox_engine_spec.py` |
 | `Model_1.SLDPRT` | CAD | SolidWorks part of the engine |
@@ -31,7 +31,7 @@ Both scripts ask for their inputs at the prompt.
 
 1. Run `ethanol_lox_ideal_cstar.py` to choose an equivalence ratio for your chamber pressure.
 2. Run `ethanol_lox_engine_spec.py` with that equivalence ratio to get mass flows, areas, radii and the nozzle contour.
-3. Pass the printed chamber and film properties to the functions in `Lstar_ChamberVolume.py` to size the injector and estimate L*.
+3. Once `Lstar_ChamberVolume.py` is complete, it will use the chamber and film properties from step 2 to calculate the chamber volume and size the injector orifices.
 
 ## Script details
 
@@ -93,7 +93,7 @@ The throat area comes from the thrust equation, including the pressure-thrust te
 
 ### `Lstar_ChamberVolume.py`
 
-A library of functions with no inputs or outputs of its own. No other script imports it at present; call the functions yourself with values from `ethanol_lox_engine_spec.py`. In this model LOX is injected as a liquid jet and ethanol as a saturated vapour.
+This code is still in the process of being completed. It will calculate the volume of the chamber and size the orifices of the injectors. In this model LOX is injected as a liquid jet and ethanol as a saturated vapour.
 
 | Function | Returns |
 | --- | --- |
@@ -111,3 +111,13 @@ Pressures passed to these functions are in atm.
 ### `Combustion.yaml`
 
 The Cantera input file, converted from the San Diego mechanism. It defines an ideal-gas phase with 12 species: N2, AR, HE, C2H5OH, O2, CO2, H2O, H2, CO, H, O and OH, with mixture-averaged transport. The scripts use it for equilibrium and transport properties only.
+
+## Sources
+
+The L*, Spalding number and drag actuation coefficient calculations (`Lstar`, `Spalding_Number` and `Drag_Actuation_S`) follow:
+
+- [Evaluation of SMD Effects on Characteristic Lengths of Liquid Rocket Engines Using Ethanol/LOx and RP-1/LOx](https://www.researchgate.net/publication/345906474_Evaluation_of_SMD_Effects_on_Characteristic_Lengths_of_Liquid_Rocket_Engines_Using_EthanolLOx_and_RP-1LOx)
+
+The Sauter mean diameter correlation (`SMD_Plain_Jet`) comes from:
+
+- A. H. Lefebvre and D. R. Ballal, *Gas Turbine Combustion: Alternative Fuels and Emissions*, 3rd ed., CRC Press, 2010.

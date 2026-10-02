@@ -121,7 +121,7 @@ def Ethanol_Injection_Properties(discharge_coefficient, J, mass_flow, Pc , N):
 
     return A_inj, (P_manifold/ct.one_atm), ethanol_density, u_inj
 
-def SMD_Plain_Jet (gas_density, lox_tube_diameter, liquid_viscosity, liquid_density, 
+def SMD_Plain_Jet (sigma,gas_density, lox_tube_diameter, liquid_viscosity, liquid_density, 
          mass_flow_gas, mass_flow_liquid, gas_velocity, liquid_velocity):
 
     GLR = mass_flow_gas/mass_flow_liquid
@@ -138,7 +138,7 @@ def SMD_Plain_Jet (gas_density, lox_tube_diameter, liquid_viscosity, liquid_dens
 
     u_l = liquid_velocity
 
-    sigma = 0.0017783 ## N/m
+    # sigma = 0.0017783 ## N/m
 
     u_R_squared = (u_g - u_l)**2
 
