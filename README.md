@@ -13,7 +13,7 @@ Combustion is modelled as chemical equilibrium with [Cantera](https://cantera.or
 | `Lstar_ChamberVolume.py` | Function library (in progress) | Chamber volume and injector orifice sizing |
 | `Combustion.yaml` | Data | Cantera gas model used by all of the scripts |
 | `Nozzle_Geometry.png` | Output | Example nozzle contour plot from `ethanol_lox_engine_spec.py` |
-| `Model_1.SLDPRT` | CAD | SolidWorks part of the engine |
+
 
 ## Setup
 
