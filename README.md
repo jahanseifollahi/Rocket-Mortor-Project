@@ -121,3 +121,5 @@ The L*, Spalding number and drag actuation coefficient calculations (`Lstar`, `S
 The Sauter mean diameter correlation (`SMD_Plain_Jet`) comes from:
 
 - A. H. Lefebvre and D. R. Ballal, *Gas Turbine Combustion: Alternative Fuels and Emissions*, 3rd ed., CRC Press, 2010.
+
+If there are any mistakes made or if you have suggestion for improvement, please let me know. 
