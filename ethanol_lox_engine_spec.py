@@ -260,7 +260,7 @@ theta_e = float(input("Enter nozzle exit angle (deg): "))
 
 pi = math.pi
 nozzle_refrence_angle = 15
-throat_arc_divergence_coef = 0.382
+throat_arc_divergence_coef = 0.4
 # throat_arc_convergence_coef = 1.5
 print("\n")
 
