@@ -122,4 +122,8 @@ The Sauter mean diameter correlation (`SMD_Plain_Jet`) comes from:
 
 - A. H. Lefebvre and D. R. Ballal, *Gas Turbine Combustion: Alternative Fuels and Emissions*, 3rd ed., CRC Press, 2010.
 
+General reference for rocket propulsion theory:
+
+- G. P. Sutton and O. Biblarz, *Rocket Propulsion Elements*, 9th ed., Wiley, 2017.
+
 If there are any mistakes made or if you have suggestion for improvement, please let me know. 
